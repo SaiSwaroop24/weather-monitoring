@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Monitoring</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Temperature (°C)</th>
+                <th>Feels Like (°C)</th>
+                <th>Main Condition</th>
+                <th>Time of Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in weather_data_list %}
+            <tr>
+                <td>{{ data.city }}</td>
+                <td>{{ data.temp }}</td>
+                <td>{{ data.feels_like }}</td>
+                <td>{{ data.main }}</td>
+                <td>{{ data.dt }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
